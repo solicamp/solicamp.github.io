@@ -1,19 +1,21 @@
 ---
 layout: default
 ---
-<img src="images/solicamp_cover.jpg" />
-<div class="posts">
+
+<article>
+
   {% assign posts = site.posts | where:"lang", "de" %}
   {% for post in posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
+    <section class="center measure-wide f5 lh-copy">
+      <img src="{{ post.cover-image }}" />
+      <div class="ph2">
+      <h1 class="f5 f4-ns measure lh-title"><a class="link dim black-80" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <div class="f5 f4-ns lh-copy measure">
         {{ post.excerpt }}
       </div>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+      <a class="link dim" href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      </div>
+    </section>
   {% endfor %}
-</div>
+</article>
